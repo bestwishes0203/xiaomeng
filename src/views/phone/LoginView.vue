@@ -27,8 +27,8 @@
       -&ensp;助&ensp;力&ensp;可&ensp;持&ensp;续&ensp;化&ensp;发&ensp;展&ensp;事&ensp;业&ensp;-
     </div>
     <div class="input_box">
-      <el-input placeholder="邮箱/手机号码/小梦ID"/>
-      <el-input placeholder="请输入密码"/>
+      <el-input v-model="acc" placeholder="邮箱/手机号码/小梦ID"/>
+      <el-input v-model="pwd" placeholder="请输入密码"/>
     </div>
     <div class="check">
       <el-row>
@@ -40,7 +40,7 @@
       </el-row>
     </div>
     <div class="button">
-      <el-button type="primary">登录</el-button>
+      <el-button type="primary" @click="loginIN">登录</el-button>
     </div>
     <div class="list">
       <el-row>
@@ -55,7 +55,31 @@
 </template>
 
 <script lang="ts" setup>
+import router from "@/router";
+import {ref} from "vue";
+import {ElMessageBox} from 'element-plus'
+import type {Action} from 'element-plus'
 
+const acc = ref('')
+const pwd = ref('')
+const loginIN = () => {
+  if (acc.value.length <= 0 || pwd.value.length <= 0) {
+    ElMessageBox.alert('请填写账号或密码', '提示', {
+      // if you want to disable its autofocus
+      // autofocus: false,
+      confirmButtonText: '确认',
+      callback: (action: Action) => {
+        // ElMessage({
+        //   type: 'info',
+        //   message: `action: ${action}`,
+        // })
+        console.log(action)
+      },
+    })
+  } else {
+    router.push({name: 'phone-home'})
+  }
+}
 </script>
 
 <style scoped>

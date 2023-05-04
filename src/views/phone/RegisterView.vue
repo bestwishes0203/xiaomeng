@@ -27,8 +27,9 @@
       -&ensp;助&ensp;力&ensp;可&ensp;持&ensp;续&ensp;化&ensp;发&ensp;展&ensp;事&ensp;业&ensp;-
     </div>
     <div class="input_box">
-      <el-input placeholder="邮箱/手机号码/小梦ID"/>
-      <el-input placeholder="请输入密码"/>
+      <el-input v-model="acc" placeholder="邮箱/手机号码"/>
+      <el-input v-model="pwd" placeholder="请输入密码"/>
+      <el-input v-model="pass" placeholder="请再次确认密码"/>
     </div>
     <div class="check">
       <el-row>
@@ -40,13 +41,13 @@
       </el-row>
     </div>
     <div class="button">
-      <el-button type="primary">注册</el-button>
+      <el-button type="primary" @click="registerIN">注册</el-button>
     </div>
     <div class="list">
       <el-row>
-        <el-col :span="8">手机号登陆&ensp;</el-col>
+        <el-col :span="8"><span @click="toLogin">手机号登陆</span>&ensp;</el-col>
         <el-col :span="1.5">|</el-col>
-        <el-col :span="7">前往登录</el-col>
+        <el-col :span="7"><span @click="toLogin">前往登录</span></el-col>
         <el-col :span="1.5">|</el-col>
         <el-col :span="8">&ensp;忘记密码</el-col>
       </el-row>
@@ -56,6 +57,36 @@
 
 <script lang="ts" setup>
 
+import router from "@/router";
+import {ref} from "vue";
+import {ElMessageBox} from 'element-plus'
+import type {Action} from 'element-plus'
+
+const acc = ref('')
+const pwd = ref('')
+const pass = ref('')
+const registerIN = () => {
+  if (acc.value.length <= 0 || pwd.value.length <= 0 || pass.value.length <= 0) {
+    ElMessageBox.alert('请填写账号或密码', '提示', {
+      // if you want to disable its autofocus
+      // autofocus: false,
+      confirmButtonText: '确认',
+      callback: (action: Action) => {
+        // ElMessage({
+        //   type: 'info',
+        //   message: `action: ${action}`,
+        // })
+        console.log(action)
+      },
+    })
+  } else {
+    router.push({name: 'phone-home'})
+  }
+}
+
+const toLogin = () => {
+  router.push({name: 'phone-login'})
+}
 </script>
 
 <style scoped>

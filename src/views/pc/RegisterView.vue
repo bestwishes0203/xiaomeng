@@ -103,6 +103,8 @@ const loginIn = (formEl: FormInstance | undefined) => {
         }
         if (res.data.code === "200") {
           ElMessage.success("注册成功")
+          registerForm.account = null;
+          registerForm.pwd = null;
           return;
         }
       })

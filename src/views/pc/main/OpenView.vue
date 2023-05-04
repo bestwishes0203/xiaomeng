@@ -11,23 +11,27 @@
   </div>
 
   <div class="absolute_view">
-    <div
-        style="width: 80%;height: 80vh;transform: translateY(0vh);color: white;margin: 0 auto;display: flex;flex-direction: row;">
-      <div class="gradle_color">
-        <div class="item">
-          <img class="turnBig" src="@/assets/commication.png"/>
-          <h1 style="text-align: center;">小梦社区</h1>
-          <p style="text-align: center;">赶快加入这个有趣的大家庭吧！</p>
+    <el-card
+        style="background: #fff;width: 90%;height: 500px;margin: 0 auto;transform: translateY(60px);border-radius: 20px;"
+        shadow="hover">
+      <div
+          style="width: 80%;height: 450px;transform: translateY(0vh);color: white;margin: 0 auto;display: flex;flex-direction: row;">
+        <div class="gradle_color">
+          <div class="item">
+            <img class="turnBig" src="@/assets/commication.png"/>
+            <h1 style="text-align: center;">小梦社区</h1>
+            <p style="text-align: center;">赶快加入这个有趣的大家庭吧！</p>
+          </div>
+        </div>
+        <div class="gradle_color">
+          <div class="item">
+            <img class="turnBig" src="@/assets/more.png"/>
+            <h1 style="text-align: center;">小梦建议</h1>
+            <p style="text-align: center;">这里有你想要的生活小妙招！</p>
+          </div>
         </div>
       </div>
-      <div class="gradle_color">
-        <div class="item">
-          <img class="turnBig" src="@/assets/more.png"/>
-          <h1 style="text-align: center;">小梦建议</h1>
-          <p style="text-align: center;">这里有你想要的生活小妙招！</p>
-        </div>
-      </div>
-    </div>
+    </el-card>
   </div>
 </template>
 

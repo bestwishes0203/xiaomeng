@@ -54,23 +54,30 @@ const navList = [{
   index: "2",
   path: "/recycle",
   label: "绿色回收",
-}, {
-  index: "3",
-  path: "/second",
-  label: "学长二手",
-}, {
-  index: "4",
-  path: "/open",
-  label: "小梦开放平台",
-}, {
-  index: "5",
-  path: "/cooperation",
-  label: "社会合作",
-}, {
-  index: "6",
-  path: "/manage",
-  label: "账号管理",
-}]
+},
+  {
+    index: "3",
+    path: "/location",
+    label: "服务网点",
+  },
+//   {
+//   index: "3",
+//   path: "/second",
+//   label: "学长二手",
+// },
+  {
+    index: "4",
+    path: "/open",
+    label: "小梦开放平台",
+  }, {
+    index: "5",
+    path: "/cooperation",
+    label: "社会合作",
+  }, {
+    index: "6",
+    path: "/manage",
+    label: "账号管理",
+  }]
 const handleSelect = () => {
   console.log('点击了导航栏')
 }

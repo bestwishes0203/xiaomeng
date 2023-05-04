@@ -12,10 +12,10 @@
             ref="ruleFormRef"
             :model="ruleForm"
             :rules="rules"
-            label-width="60px"
+            label-width="80px"
         >
           <el-form-item label="账号" prop="account">
-            <el-input v-model="ruleForm.account" :placeholder="form.user_id===-1? '请填写账号':form.account" disabled/>
+            <el-input v-model="ruleForm.account" :placeholder="form.user_id===-1? '2120200411':form.account" disabled/>
           </el-form-item>
           <el-form-item label="密码" prop="password">
             <!--            placeholder="请填写密码"-->
@@ -37,8 +37,8 @@
             <el-input v-model="ruleForm.address" type="textarea"
                       :placeholder="form.user_id===-1? '请填写详细地址':form.address"/>
           </el-form-item>
-          <el-form-item label="备注" prop="remark">
-            <el-input v-model="ruleForm.remark" type="textarea" :placeholder="form.user_id===-1? '请填写备注':form.remark"/>
+          <el-form-item label="个人介绍" prop="remark">
+            <el-input v-model="ruleForm.remark" type="textarea" :placeholder="form.user_id===-1? '请填写个人介绍':form.remark"/>
           </el-form-item>
           <el-form-item>
             <i style="line-height: 20px;margin: 0;color: #838383;">Ps:请完善个人信息</i>
@@ -54,7 +54,7 @@
   </el-row>
 
   <el-card class="absolute_view">
-    <div style="width: 100%;height: calc(100vh - 40px);background: #f1f2f3;">
+    <div style="width: 100%;height: calc(70vh - 40px);background: #f1f2f3;">
       <mine-view/>
     </div>
   </el-card>
@@ -171,7 +171,7 @@ onBeforeMount(() => {
 <style scoped>
 .transform_view {
   transform: translateY(-100vh);
-  height: 100vh;
+  height: 70vh;
 }
 
 .form {
@@ -184,7 +184,7 @@ onBeforeMount(() => {
 .absolute_view {
   position: absolute;
   width: calc(100% - 0px);
-  height: 100vh;
+  height: 70vh;
   top: calc(100vh + 0px);
   background: rgba(255, 105, 0, .7);
   border: none;

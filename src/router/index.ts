@@ -40,11 +40,18 @@ const routes = [
                 name: 'payed',
                 component: () => import('../views/pc/recycle/PayedView.vue')
             }]
-        }, {
-            path: '/second',
-            name: 'second',
-            component: () => import('../views/pc/main/SecondView.vue')
-        }, {
+        },
+            {
+                path: '/location',
+                name: 'location',
+                component: () => import('../views/pc/main/LocationView.vue')
+            },
+        //     {
+        //     path: '/second',
+        //     name: 'second',
+        //     component: () => import('../views/pc/main/SecondView.vue')
+        // },
+            {
             path: '/manage',
             name: 'manage',
             component: () => import('../views/pc/main/ManageView.vue'),
@@ -73,7 +80,7 @@ const routes = [
     }, {
         path: '/phone-main',
         name: 'phone-main',
-        redirect: '/phone-recycle',
+        redirect: '/phone-home',
         component: () => import('../views/phone/MainView.vue'),
         children: [{
             path: '/phone-home',

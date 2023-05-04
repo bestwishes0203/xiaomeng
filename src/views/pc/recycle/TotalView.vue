@@ -63,13 +63,26 @@ const cancelEvent = () => {
 }
 const handleDelete = (index: number, row: never) => {
   console.log(index, row)
+  console.log(row.order_id)
+  // axios.delete(`/list/delete/?user_id=row.order_id`, {
+  //   // params: {
+  //   //   user_id: row.order_id
+  //   // }
+  // })
   axios({
     method: 'DELETE',
-    url: '',
+    url: '/order/list/delete/' + row.order_id,
     data: {},
-  }).then((res) => {
-    console.log(res)
-  }).catch((err) => {
+  })
+      .then((res) => {
+        console.log(res)
+        ElMessage.success({
+          message: '删除成功',
+          grouping: true,
+          duration: 1000,
+        })
+        getOrder();
+      }).catch((err) => {
     console.log(err)
   })
 }
@@ -78,6 +91,10 @@ const handleEdit = (index: number, row: never) => {
 }
 
 onBeforeMount(() => {
+  getOrder();
+})
+
+const getOrder = () => {
   let user = JSON.parse(localStorage.getItem("user"))
   if (user !== null) {
     let account = user.account
@@ -98,7 +115,7 @@ onBeforeMount(() => {
       console.log(err)
     })
   }
-})
+}
 
 </script>
 
